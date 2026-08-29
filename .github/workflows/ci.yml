@@ -24,8 +24,23 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v5
 
+      - name: Create debug keystore for signing
+        run: |
+          mkdir -p ~/.android
+          if [ ! -f ~/.android/debug.keystore ]; then
+            keytool -genkeypair -v \
+              -dname "CN=BYDMate, OU=Dev, O=BYDMate, L=City, S=State, C=US" \
+              -storepass android \
+              -keypass android \
+              -alias debug \
+              -keystore ~/.android/debug.keystore \
+              -keyalg RSA \
+              -keysize 2048 \
+              -validity 10000
+          fi
+
       - name: Build release APK
-        run: ./gradlew :app:assembleRelease --stacktrace -PallowUnsignedRelease
+        run: ./gradlew :app:assembleRelease --stacktrace
 
       - name: Upload APK
         if: always()
