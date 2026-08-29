@@ -115,7 +115,7 @@ class OpenRouterClient @Inject constructor(
             val request = Request.Builder()
                 .url("$BASE_URL/chat/completions")
                 .addHeader("Authorization", "Bearer $apiKey")
-                .addHeader("HTTP-Referer", "https://github.com/AndyShaman/BYDMate")
+                .addHeader("HTTP-Referer", "https://github.com/121299568/BYDMate")
                 .addHeader("X-Title", "BYDMate")
                 .post(payload.toString().toRequestBody(JSON_MEDIA))
                 .build()
@@ -167,7 +167,7 @@ class OpenRouterClient @Inject constructor(
      * Raw chat-completions call for the voice agent: full message history plus optional
      * tool schemas, against any OpenAI-compatible [baseUrl] (OpenRouter, z.ai, or a custom
      * endpoint). Returns choices[0].message (content and/or tool_calls). Failures surface
-     * as Result.failure — unlike [chat], the agent needs to voice the error.
+     * as Result.failure �?unlike [chat], the agent needs to voice the error.
      */
     suspend fun chatRaw(
         baseUrl: String,
@@ -183,7 +183,7 @@ class OpenRouterClient @Inject constructor(
             val request = Request.Builder()
                 .url("$base/chat/completions")
                 .addHeader("Authorization", "Bearer $apiKey")
-                .addHeader("HTTP-Referer", "https://github.com/AndyShaman/BYDMate")
+                .addHeader("HTTP-Referer", "https://github.com/121299568/BYDMate")
                 .addHeader("X-Title", "BYDMate")
                 .post(payload.toString().toRequestBody(JSON_MEDIA))
                 .build()
@@ -199,7 +199,7 @@ class OpenRouterClient @Inject constructor(
     /** Dedicated client for SSE: the shared 15s readTimeout is a between-token timeout and
      *  would cut long generations. Voice-tuned bounds: a between-token stall of 20s means the
      *  car's network degraded (OpenRouter sends keep-alive comments well within that), and
-     *  45s is the worst-case hard cap for one voice round — a frozen orb for minutes is worse
+     *  45s is the worst-case hard cap for one voice round �?a frozen orb for minutes is worse
      *  than an honest "не получилось". */
     private val streamClient: OkHttpClient by lazy {
         httpClient.newBuilder()
@@ -227,7 +227,7 @@ class OpenRouterClient @Inject constructor(
             val request = Request.Builder()
                 .url("$base/chat/completions")
                 .addHeader("Authorization", "Bearer $apiKey")
-                .addHeader("HTTP-Referer", "https://github.com/AndyShaman/BYDMate")
+                .addHeader("HTTP-Referer", "https://github.com/121299568/BYDMate")
                 .addHeader("X-Title", "BYDMate")
                 .post(payload.toString().toRequestBody(JSON_MEDIA))
                 .build()

@@ -23,7 +23,7 @@ class UpdateChecker @Inject constructor(
     private val httpClient: OkHttpClient
 ) {
     companion object {
-        private const val GITHUB_API = "https://api.github.com/repos/AndyShaman/BYDMate/releases/latest"
+        private const val GITHUB_API = "https://api.github.com/repos/121299568/BYDMate/releases/latest"
         private const val PREFS_NAME = "update_prefs"
         private const val KEY_LAST_CHECK = "last_check"
         private const val KEY_AUTO_CHECK = "auto_check_enabled"
@@ -141,7 +141,7 @@ class UpdateChecker @Inject constructor(
         var finished = false
         while (!finished) {
             val query = DownloadManager.Query().setFilterById(downloadId)
-            // .use{} closes the cursor on every path â€” the old code only closed it inside the
+            // .use{} closes the cursor on every path â€?the old code only closed it inside the
             // moveToFirst() block, leaking one cursor per poll when the row was momentarily absent.
             val rowPresent = downloadManager.query(query)?.use { cursor ->
                 if (!cursor.moveToFirst()) return@use false

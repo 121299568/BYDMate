@@ -33,7 +33,7 @@ class TtsModelManager(
 
     fun modelDirPath(modelDirId: String): String = baseDir(modelDirId).absolutePath
 
-    /** The archive's .onnx filename is not hardcoded â€” find the single model file.
+    /** The archive's .onnx filename is not hardcoded â€?find the single model file.
      *  AppleDouble sidecar files (._*.onnx) are skipped; they crash sherpa-onnx. */
     fun onnxFile(modelDirId: String): File? =
         baseDir(modelDirId).listFiles()?.firstOrNull { it.isFile && it.name.endsWith(".onnx") && !it.name.startsWith("._") }
@@ -111,7 +111,7 @@ class TtsModelManager(
                             throw t
                         }
                     }
-                    // Cancelled between commit and return: don't report success â€”
+                    // Cancelled between commit and return: don't report success â€?
                     // the serialized delete() removes the dir, state must not flip.
                     ensureActive()
                 } finally {
@@ -211,7 +211,7 @@ class TtsModelManager(
     companion object {
         private const val TAG = "TtsModelManager"
         const val DEFAULT_VOICE_ID = "dmitri"
-        internal const val STRESS_DICT_URL = "https://github.com/AndyShaman/BYDMate/releases/download/tts-voices-v1/stress-ru.tar.bz2"
+        internal const val STRESS_DICT_URL = "https://github.com/121299568/BYDMate/releases/download/tts-voices-v1/stress-ru.tar.bz2"
         internal const val STRESS_DICT_FILE = "stress.tsv"
         /** Sanity floor for a freshly downloaded dictionary: the real ru asset is ~11.9 MB /
          *  529k lines (tts-voices-v1), so anything far smaller is a truncated or wrong asset

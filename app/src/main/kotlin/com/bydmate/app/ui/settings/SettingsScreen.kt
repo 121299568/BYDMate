@@ -1112,7 +1112,7 @@ private fun DisplaySection() {
         SettingDivider()
         // Transport selector: direct freeform (agent/HUD can see the navigator) vs the
         // pre-3.6 VirtualDisplay pipeline. VD also returns the system freeform flag to its
-        // factory value — the fix for third-party projection apps broken by a stale flag.
+        // factory value �?the fix for third-party projection apps broken by a stale flag.
         SettingChipRow(
             title = stringResource(R.string.settings_projection_mode_title),
             options = listOf(
@@ -1172,14 +1172,14 @@ private fun DisplaySection() {
             )
         }
         // Once the firmware is proven to ignore the freeform flag (#139) the reboot advice is
-        // wrong — say so instead.
+        // wrong �?say so instead.
         if (directProjection && (freeformUnsupported || rebootPending)) {
             SettingHint(text = stringResource(
                 if (freeformUnsupported) R.string.cluster_direct_unsupported_hint
                 else R.string.settings_cluster_direct_reboot_hint
             ))
         }
-        // Trigger-button row — only meaningful while the feature (and thus the a11y service) is on.
+        // Trigger-button row �?only meaningful while the feature (and thus the a11y service) is on.
         if (enabled) {
             SettingDivider()
             SettingValueRow(
@@ -1189,7 +1189,7 @@ private fun DisplaySection() {
             )
         }
         SettingDivider()
-        // App to project — defaults to Yandex Navi. Takes effect on the next star press, not live.
+        // App to project �?defaults to Yandex Navi. Takes effect on the next star press, not live.
         SettingValueRow(
             title = stringResource(R.string.settings_display_app_title),
             value = targetLabel,
@@ -1345,10 +1345,10 @@ private fun DisplaySection() {
 }
 
 /**
- * «Слепые зоны»: turn signal → blind-spot camera. Reads and writes the feature's own
+ * «Слепые зоны»: turn signal �?blind-spot camera. Reads and writes the feature's own
  * SharedPreferences file directly, like the projection cards above; BlindSpotController
  * re-reads it on every tick, so a change lands without a restart. Turning the switch on asks
- * for CAMERA — the AVM stack refuses to open the preview without it (as on the probe screen).
+ * for CAMERA �?the AVM stack refuses to open the preview without it (as on the probe screen).
  */
 @Composable
 private fun BlindSpotCard() {
@@ -1368,7 +1368,7 @@ private fun BlindSpotCard() {
     var bsdGlow by remember { mutableStateOf(prefs.getBoolean(BlindSpotPreferences.KEY_BSD_GLOW, true)) }
 
     // Drag-to-place preview: it lives in a WindowManager overlay, so leaving the screen has to
-    // take it down explicitly. The flag follows the window rather than the clicks — the overlay
+    // take it down explicitly. The flag follows the window rather than the clicks �?the overlay
     // also goes away on its own idle timer.
     val placingState = remember { mutableStateOf(false) }
     var placing by placingState
@@ -1376,7 +1376,7 @@ private fun BlindSpotCard() {
         BlindSpotPositionOverlay().apply { onHidden = { placingState.value = false } }
     }
     // MainActivity survives configuration changes, so onDispose alone never fires when the driver
-    // goes Home — an opaque touchable window would stay over whatever is on screen.
+    // goes Home �?an opaque touchable window would stay over whatever is on screen.
     val lifecycleOwner = LocalLifecycleOwner.current
     DisposableEffect(lifecycleOwner) {
         val observer = LifecycleEventObserver { _, event ->
@@ -1495,11 +1495,11 @@ private fun steeringButtonLabel(keyCode: Int): String {
  * «Разделение экрана» settings section.
  *
  * Controls the split-screen 1/3+2/3 feature:
- *   1. Master toggle — writes to SplitPreferences and realigns enable_freeform_support via
+ *   1. Master toggle �?writes to SplitPreferences and realigns enable_freeform_support via
  *      ClusterProjectionManager.realignFreeformFlag().
- *   2. Reboot hint — shown when freeform was not yet active at the time split was enabled
+ *   2. Reboot hint �?shown when freeform was not yet active at the time split was enabled
  *      (flag is read once at boot). Mirrors the projection section's mechanism.
- *   3. Clear-last-pair row — lets the user discard the saved pair so the next launch
+ *   3. Clear-last-pair row �?lets the user discard the saved pair so the next launch
  *      opens the picker instead of the saved apps.
  */
 @Composable
@@ -1562,7 +1562,7 @@ private fun SplitSection() {
                     splitEnabled = enabled
                     if (enabled) {
                         // Arm the reboot hint when enabling split while freeform is not yet live
-                        // (direct projection is off → flag was 0). Mirrors the projection section's
+                        // (direct projection is off �?flag was 0). Mirrors the projection section's
                         // KEY_FREEFORM_REBOOT_PENDING mechanism for the split consumer.
                         ClusterProjectionManager.armSplitRebootHintIfNeeded(context, splitEnabled = true)
                         splitRebootPending = clusterPrefs.getBoolean(
@@ -1606,10 +1606,10 @@ private fun SplitSection() {
             }
             // Reboot hint: shown when split was enabled while freeform was not yet active.
             // enable_freeform_support is read once at boot, so a restart is required. Once the
-            // firmware is proven to ignore the flag (#139) the reboot advice is wrong — say so,
+            // firmware is proven to ignore the flag (#139) the reboot advice is wrong �?say so,
             // and point at the native mechanism, which does not depend on that flag. Both hints
-            // are about freeform only, so the native mechanism — and a firmware that only has
-            // the native one — hides them.
+            // are about freeform only, so the native mechanism �?and a firmware that only has
+            // the native one �?hides them.
             if (splitEnabled && !nativeMode && !split37Firmware &&
                 (splitFreeformUnsupported || splitRebootPending)) {
                 val hint = if (splitFreeformUnsupported) {
@@ -1739,7 +1739,7 @@ internal sealed interface LearnUiState {
 
 /**
  * Learn-the-button dialog. Puts SteeringWheelKeyService into learn mode while open and collects the
- * captured key from its StateFlow (same process). States: Waiting → (Rejected/Occupied loop) →
+ * captured key from its StateFlow (same process). States: Waiting �?(Rejected/Occupied loop) �?
  * Captured (confirm) / TimedOut. learnMode is always cleared on dispose.
  *
  * [occupiedReason] lets a caller veto an otherwise assignable key: a non-null text means "this key
@@ -1763,7 +1763,7 @@ internal fun LearnButtonDialog(
 
     // Arm capture, then react ONLY to fresh emissions. The StateFlow replays its current value to a
     // new collector, so we reset it to null first and filterNotNull() drops both that reset and any
-    // stale value left from a previous session — reopening therefore always starts at Waiting.
+    // stale value left from a previous session �?reopening therefore always starts at Waiting.
     LaunchedEffect(Unit) {
         SteeringWheelKeyService.capturedKey.value = null
         SteeringWheelKeyService.learnMode = true
@@ -1879,7 +1879,7 @@ private fun ServiceSection(
         EntryPointAccessors.fromApplication(context.applicationContext, ClusterEntryPoint::class.java)
     }
 
-    // SAF picker for restore — must be declared at composable top level
+    // SAF picker for restore �?must be declared at composable top level
     val restoreLauncher = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
         if (uri != null) viewModel.restoreConfig(uri)
     }
@@ -1967,7 +1967,7 @@ private fun ServiceSection(
     // Car system: settings that change the head unit itself, not the app.
     SectionHeader(text = stringResource(R.string.settings_car_system_header))
 
-    // Volume-knob press → play/pause. The interception lives in the a11y key filter, so turning
+    // Volume-knob press �?play/pause. The interception lives in the a11y key filter, so turning
     // the switch on self-enables it via the daemon, exactly like the projection card.
     var knobPlayPause by remember {
         mutableStateOf(clusterPrefs.getBoolean(ClusterProjectionManager.KEY_KNOB_PLAY_PAUSE, false))
@@ -1994,7 +1994,7 @@ private fun ServiceSection(
         }
     }
 
-    // Hidden BYD language dialog (UI7 only). We never write the locale ourselves — the button just
+    // Hidden BYD language dialog (UI7 only). We never write the locale ourselves �?the button just
     // opens the factory dialog, and the card stays hidden on firmwares that do not ship it.
     val localeIntent = remember { Intent("android.settings.LOCALE_SETTINGS1") }
     val localeDialogAvailable = remember {
@@ -2246,13 +2246,13 @@ private fun AppSection(state: SettingsUiState, viewModel: SettingsViewModel) {
         ) {
             Text(stringResource(R.string.settings_copyright), color = TextSecondary, fontSize = 14.sp)
             Text(
-                text = "github.com/AndyShaman/BYDMate",
+                text = "github.com/121299568/BYDMate",
                 color = AccentBlue,
                 fontSize = 14.sp,
                 textDecoration = TextDecoration.Underline,
                 modifier = Modifier.clickable {
                     context.startActivity(Intent(Intent.ACTION_VIEW,
-                        Uri.parse("https://github.com/AndyShaman/BYDMate")))
+                        Uri.parse("https://github.com/121299568/BYDMate")))
                 }
             )
             Text(
@@ -2277,7 +2277,7 @@ private fun VoiceSettingsContent(
     // callback dispatches the right operation (ENABLE toggle).
     var pendingVoiceAction by remember { mutableStateOf("") }  // "ENABLE" | ""
 
-    // RECORD_AUDIO permission launcher — requested on enable
+    // RECORD_AUDIO permission launcher �?requested on enable
     val audioPermLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
     ) { granted ->
@@ -2297,7 +2297,7 @@ private fun VoiceSettingsContent(
         context, Manifest.permission.READ_CONTACTS
     ) == PackageManager.PERMISSION_GRANTED
 
-    // READ_CONTACTS permission for call_contact — standard runtime dialog only, no ADB.
+    // READ_CONTACTS permission for call_contact �?standard runtime dialog only, no ADB.
     var contactsPermGranted by remember { mutableStateOf(hasContactsPerm()) }
     val contactsPermLauncher = rememberLauncherForActivityResult(
         ActivityResultContracts.RequestPermission()
@@ -2901,7 +2901,7 @@ private fun LanguageBlock(
     // LocalConfiguration so every stringResource recomposes on next frame.
     val langCodes = listOf("ru", "en", "zh", "pt", "pl", "be")
     val langLabels = listOf(
-        stringResource(R.string.settings_lang_russian), "English", "简体中文", "Português",
+        stringResource(R.string.settings_lang_russian), "English", "简体中�?, "Português",
         "Polski", "Беларуская",
     )
     SectionHeader(text = stringResource(R.string.settings_language_title))

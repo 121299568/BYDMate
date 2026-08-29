@@ -65,7 +65,7 @@
     <string name="settings_display_button_title">Кнопка запуска</string>
     <string name="settings_display_button_change">Изменить</string>
     <string name="learn_button_dialog_title">Назначить кнопку</string>
-    <string name="learn_button_waiting">Нажмите кнопку на руле…</string>
+    <string name="learn_button_waiting">Нажмите кнопку на руле�?/string>
     <string name="learn_button_rejected">Эту кнопку нельзя назначить. Нажмите другую.</string>
     <string name="learn_button_captured">Кнопка распознана:</string>
     <string name="learn_button_timeout">Кнопка не распознана. Возможно, она не передаётся системе. Попробуйте другую.</string>
@@ -106,11 +106,11 @@
     <string name="settings_range_calc_method_label">Метод расчёта</string>
     <string name="settings_range_calc_auto">Авто</string>
     <string name="settings_range_calc_manual">Ручной</string>
-    <string name="settings_range_calc_method_desc">«Авто» — по истории поездок и текущему расходу. «Ручной» — по вашей таблице расхода в зависимости от температуры батареи.</string>
+    <string name="settings_range_calc_method_desc">«Авто» �?по истории поездок и текущему расходу. «Ручной» �?по вашей таблице расхода в зависимости от температуры батареи.</string>
     <string name="settings_range_calc_edit_table_button">Таблица расхода</string>
-    <string name="settings_range_calc_edit_table_desc">5 точек: температура батареи → расход (и, опционально, запас хода на 100% заряда)</string>
+    <string name="settings_range_calc_edit_table_desc">5 точек: температура батареи �?расход (и, опционально, запас хода на 100% заряда)</string>
     <string name="range_table_dialog_title">Таблица расхода по температуре батареи</string>
-    <string name="range_table_dialog_note1">Расход (кВт·ч/100км) обязателен; запас хода на 100% заряда — опционален, но заполняется либо во всех строках, либо ни в одной.</string>
+    <string name="range_table_dialog_note1">Расход (кВт·ч/100км) обязателен; запас хода на 100% заряда �?опционален, но заполняется либо во всех строках, либо ни в одной.</string>
     <string name="range_table_dialog_col_temp">°C</string>
     <string name="range_table_dialog_col_consumption">Расход, кВт·ч/100км</string>
     <string name="range_table_dialog_col_range">Запас, км</string>
@@ -120,8 +120,8 @@
 
     <!-- Settings: Trips section -->
     <string name="settings_trips_datasource_header">Источник данных поездок</string>
-    <string name="settings_trips_datasource_note">Titan 3 — BYD energydata.\nSong и другие модели без встроенной БД — DiPlus TripInfo.</string>
-    <string name="settings_trips_datasource_hint">Если список пуст после 2-3 поездок — переключите режим.</string>
+    <string name="settings_trips_datasource_note">Titan 3 �?BYD energydata.\nSong и другие модели без встроенной БД �?DiPlus TripInfo.</string>
+    <string name="settings_trips_datasource_hint">Если список пуст после 2-3 поездок �?переключите режим.</string>
     <string name="settings_trips_system_header">Системные данные (бета)</string>
     <string name="settings_trips_system_note">Расширенные данные авто: SoH батареи, пробег BMS, статистика зарядок. Только чтение.</string>
     <string name="settings_trips_system_enable_label">Включить</string>
@@ -167,7 +167,7 @@
     <!-- Settings: Widget section -->
     <string name="settings_widget_section_header">Плавающий виджет</string>
     <string name="settings_widget_show_soc_label">Показывать виджет SOC</string>
-    <string name="settings_widget_hints">• Долгий тап на виджете - скрыть до следующего открытия BYDMate.\n• Перетащить в корзину внизу - выключить совсем.\n• Обычный тап - открыть BYDMate.</string>
+    <string name="settings_widget_hints">�?Долгий тап на виджете - скрыть до следующего открытия BYDMate.\n�?Перетащить в корзину внизу - выключить совсем.\n�?Обычный тап - открыть BYDMate.</string>
     <string name="settings_widget_hide_youtube_label">Скрывать при YouTube</string>
     <string name="settings_widget_hide_youtube_description">Панель кнопок прячется, пока YouTube на экране</string>
     <string name="settings_widget_hide_apps_label">Скрывать в приложениях</string>
@@ -210,7 +210,7 @@
     <string name="settings_log_recording_start_button">Запись логов</string>
     <string name="settings_log_recording_stop_button">Остановить запись</string>
     <string name="settings_about_header">О приложении</string>
-    <string name="settings_copyright">© 2026 AndyShaman</string>
+    <string name="settings_copyright">© 2026 121299568</string>
     <string name="settings_weather_attribution">Данные о погоде: Open-Meteo.com</string>
     <string name="settings_autostart_recorded">Автозапуск: %1$s</string>
     <string name="settings_autostart_not_recorded">Автозапуск: не зафиксирован</string>
@@ -225,7 +225,7 @@
     <string name="settings_autoservice_sentinel_title">подключено, но данные не читаются</string>
     <string name="settings_autoservice_sentinel_detail">возможно функция работает только на Leopard 3</string>
     <string name="settings_autoservice_connected_title">подключено</string>
-    <string name="settings_autoservice_connected_detail">SoH %1$s • lifetime %2$s / %3$s</string>
+    <string name="settings_autoservice_connected_detail">SoH %1$s �?lifetime %2$s / %3$s</string>
 
     <!-- Settings: Update dialog -->
     <string name="settings_update_dialog_title">Обновления</string>
@@ -294,7 +294,7 @@
     <string name="charges_go_to_settings_button">Перейти в Настройки</string>
     <string name="charges_sentinel_empty_text">На вашей модели машины статистика зарядок недоступна - диагностические данные не читаются. SoH тоже не показывается.</string>
     <string name="charges_not_tracking_banner">Новые зарядки сейчас не отслеживаются.</string>
-    <string name="charges_enable_tracking_button">Включить →</string>
+    <string name="charges_enable_tracking_button">Включить �?/string>
     <string name="charges_stats_period_label">За выбранный период</string>
     <string name="charges_stats_sessions">Сессий</string>
     <string name="charges_stats_cost">Стоимость</string>
@@ -303,7 +303,7 @@
     <string name="charges_stats_equiv_cycles">Эквив. циклов</string>
     <string name="charges_stats_bms_mileage">Пробег BMS</string>
     <string name="charges_stats_per100km">/100км lifetime</string>
-    <string name="charges_lifetime_waiting">Жду первого ответа от машины…</string>
+    <string name="charges_lifetime_waiting">Жду первого ответа от машины�?/string>
     <string name="charges_lifetime_enable_hint">Включите «Системные данные» в Настройках, чтобы видеть пробег BMS и общий объём зарядок.</string>
     <string name="charges_stats_dynamics_label">Динамика</string>
     <string name="charges_chart_cell_delta_title">Δ ячеек (В)</string>
@@ -470,11 +470,11 @@
     <string name="automation_overlay_later">Позже</string>
 
     <!-- Action controls: preview placeholders -->
-    <string name="automation_tap_to_configure">Нажмите для настройки…</string>
-    <string name="automation_tap_to_pick_app">Нажмите, чтобы выбрать приложение…</string>
-    <string name="automation_tap_to_set_phone">Нажмите, чтобы задать номер…</string>
-    <string name="automation_tap_to_pick_place">Нажмите, чтобы выбрать место…</string>
-    <string name="automation_tap_to_set_url">Нажмите, чтобы задать URL…</string>
+    <string name="automation_tap_to_configure">Нажмите для настройки�?/string>
+    <string name="automation_tap_to_pick_app">Нажмите, чтобы выбрать приложение�?/string>
+    <string name="automation_tap_to_set_phone">Нажмите, чтобы задать номер�?/string>
+    <string name="automation_tap_to_pick_place">Нажмите, чтобы выбрать место�?/string>
+    <string name="automation_tap_to_set_url">Нажмите, чтобы задать URL�?/string>
 
     <!-- Notification edit dialog -->
     <string name="automation_notification_title_label">Заголовок</string>
@@ -489,8 +489,8 @@
 
     <!-- Navigate edit dialog -->
     <string name="automation_navigate_dialog_title">Маршрут в Я.Навигаторе</string>
-    <string name="automation_navigate_no_places_hint">Сначала добавьте место в Настройки → Места</string>
-    <string name="automation_navigate_pick_place_placeholder">Выберите место…</string>
+    <string name="automation_navigate_no_places_hint">Сначала добавьте место в Настройки �?Места</string>
+    <string name="automation_navigate_pick_place_placeholder">Выберите место�?/string>
 
     <!-- URL edit dialog -->
     <string name="automation_url_dialog_title">Открыть URL</string>
@@ -533,7 +533,7 @@
     <!-- Welcome Wizard -->
     <string name="welcome_step_indicator">Шаг %1$d из 3</string>
     <string name="welcome_model_step_title">Какая у тебя модель BYD?</string>
-    <string name="welcome_model_step_description">Это определит источник данных поездок.\nTitan 3 хранит данные во встроенной БД BYD (energydata).\nSong и другие модели — только в DiPlus.</string>
+    <string name="welcome_model_step_description">Это определит источник данных поездок.\nTitan 3 хранит данные во встроенной БД BYD (energydata).\nSong и другие модели �?только в DiPlus.</string>
     <string name="welcome_model_song_label">Song / другая</string>
     <string name="welcome_model_change_later">Можно поменять позже в настройках.</string>
     <string name="welcome_next_button">Далее</string>
@@ -555,7 +555,7 @@
     <string name="welcome_autostart_apk_update_warning">После обновления APK проверьте эту настройку!</string>
     <string name="welcome_autostart_dilink_section_title">Альтернатива: через DiLink+ (Di+)</string>
     <string name="welcome_autostart_dilink_hint">Если автозапуск не сработал, добавьте в Di+:</string>
-    <string name="welcome_autostart_dilink_instruction">Di+ → Predefined → Startup tasks</string>
+    <string name="welcome_autostart_dilink_instruction">Di+ �?Predefined �?Startup tasks</string>
     <string name="welcome_autostart_command_copied_toast">Скопировано!</string>
     <string name="welcome_autostart_command_explanation">打开应用 = «открыть приложение» + имя пакета.\nДля двух приложений через точку с запятой:\n打开应用ru.yandex.yandexnavi;打开应用com.bydmate.app</string>
     <string name="welcome_system_settings_section_title">Системные настройки</string>
@@ -569,7 +569,7 @@
     <string name="welcome_importing_trips_status">Импорт поездок...</string>
 
     <!-- Service & Notifications -->
-    <string name="service_foreground_content_starting">Запуск…</string>
+    <string name="service_foreground_content_starting">Запуск�?/string>
     <!-- Foreground notification live text. soc_line: %1$s=SOC string, %2$s=range suffix (or empty), %3$s=bat-temp suffix (or empty) -->
     <string name="service_notification_soc_line">запас: %1$s%2$s%3$s</string>
     <!-- %1$.0f = range km -->
@@ -796,66 +796,66 @@
     <string name="insight_idle_prev">%1$s кВтч</string>
     <string name="insight_idle_minutes">%1$s мин</string>
     <string name="insight_idle_hours">%1$s ч</string>
-    <string name="insight_metric_night_idle">Ночь 22:00–06:00</string>
+    <string name="insight_metric_night_idle">Ночь 22:00�?6:00</string>
     <string name="insight_night_idle_value">%1$.1f кВт·ч · %2$d%% простоя</string>
     <string name="insight_night_idle_prev">%1$.1f кВт·ч</string>
 
     <!-- Local insight engine (offline rules) -->
     <string name="local_insight_not_enough_data_title">Данных мало для анализа</string>
     <string name="local_insight_not_enough_data_summary">Нужно минимум 5 поездок за неделю</string>
-    <string name="local_insight_consumption_up_title">Расход ▲%1$.0f%% за неделю</string>
-    <string name="local_insight_consumption_up_title_month">Расход ▲%1$.0f%% за месяц</string>
-    <string name="local_insight_consumption_up_summary_short">Много коротких поездок — прогрев забирает энергию</string>
-    <string name="local_insight_consumption_up_summary">Расход вырос: %1$.1f → %2$.1f кВт·ч/100</string>
-    <string name="local_insight_consumption_down_title">Расход ▼%1$.0f%%</string>
-    <string name="local_insight_consumption_down_summary">Средний %1$.1f кВт·ч/100 — экономнее прошлой недели</string>
+    <string name="local_insight_consumption_up_title">Расход �?1$.0f%% за неделю</string>
+    <string name="local_insight_consumption_up_title_month">Расход �?1$.0f%% за месяц</string>
+    <string name="local_insight_consumption_up_summary_short">Много коротких поездок �?прогрев забирает энергию</string>
+    <string name="local_insight_consumption_up_summary">Расход вырос: %1$.1f �?%2$.1f кВт·ч/100</string>
+    <string name="local_insight_consumption_down_title">Расход �?1$.0f%%</string>
+    <string name="local_insight_consumption_down_summary">Средний %1$.1f кВт·ч/100 �?экономнее прошлой недели</string>
     <string name="local_insight_consumption_down_summary_month">Средний %1$.1f кВт·ч/100, экономнее прошлого месяца</string>
     <string name="local_insight_consumption_stable_title">Расход стабилен</string>
     <string name="local_insight_consumption_stable_summary">Средний %1$.1f кВт·ч/100 за неделю</string>
     <string name="local_insight_consumption_stable_summary_month">Средний %1$.1f кВт·ч/100 за месяц</string>
-    <string name="local_insight_short_trips">%1$d из %2$d поездок короче 5 км (%3$d%%) — объединяйте короткие заезды</string>
-    <string name="local_insight_idle">На стоянке с мотором: %1$.1f кВт·ч за %2$s — %3$d%% недельного расхода</string>
+    <string name="local_insight_short_trips">%1$d из %2$d поездок короче 5 км (%3$d%%) �?объединяйте короткие заезды</string>
+    <string name="local_insight_idle">На стоянке с мотором: %1$.1f кВт·ч за %2$s �?%3$d%% недельного расхода</string>
     <string name="local_insight_idle_month">На стоянке с мотором: %1$.1f кВт·ч за %2$s, %3$d%% месячного расхода</string>
     <string name="local_insight_12v_critical_title">12V критично низкий</string>
-    <string name="local_insight_12v_critical_summary">Бортовая сеть %1$.1f В — проверьте аккумулятор</string>
-    <string name="local_insight_12v_low">12V сейчас %1$.1f В — ниже нормы 12.4 В</string>
-    <string name="local_insight_12v_falling">12V снижается: %1$.2f → %2$.2f В за неделю</string>
-    <string name="local_insight_12v_falling_month">12V снижается: %1$.2f → %2$.2f В за месяц</string>
+    <string name="local_insight_12v_critical_summary">Бортовая сеть %1$.1f В �?проверьте аккумулятор</string>
+    <string name="local_insight_12v_low">12V сейчас %1$.1f В �?ниже нормы 12.4 В</string>
+    <string name="local_insight_12v_falling">12V снижается: %1$.2f �?%2$.2f В за неделю</string>
+    <string name="local_insight_12v_falling_month">12V снижается: %1$.2f �?%2$.2f В за месяц</string>
     <string name="local_insight_cell_critical_title">Большой разброс банок</string>
-    <string name="local_insight_cell_critical_summary">Дельта %1$.0f мВ — следите за балансировкой</string>
-    <string name="local_insight_cell_delta">Разброс банок %1$.0f мВ — возможна слабая ячейка</string>
-    <string name="local_insight_cold">При %1$d°C средний расход %2$.1f кВт·ч/100 — зимой это ожидаемо</string>
+    <string name="local_insight_cell_critical_summary">Дельта %1$.0f мВ �?следите за балансировкой</string>
+    <string name="local_insight_cell_delta">Разброс банок %1$.0f мВ �?возможна слабая ячейка</string>
+    <string name="local_insight_cold">При %1$d°C средний расход %2$.1f кВт·ч/100 �?зимой это ожидаемо</string>
     <string name="local_insight_best_worst">Лучшая поездка %1$.1f, худшая %2$.1f кВт·ч/100</string>
     <string name="local_insight_cost">За неделю %1$.0f %2$s на поездки</string>
     <string name="local_insight_cost_month">За месяц %1$.0f %2$s на поездки</string>
     <string name="local_insight_night_idle_title">Ночной расход на стоянке</string>
-    <string name="local_insight_night_idle_summary">%1$.1f кВт·ч ночью — %2$d%% простоя с мотором</string>
-    <string name="local_insight_night_idle">Ночью (22:00–06:00) с мотором ушло %1$.1f кВт·ч — %2$d%% всего простоя. Выключайте зажигание, если климат не нужен</string>
-    <string name="local_insight_dc_more_expensive">DC %1$.2f %4$s/кВт·ч vs AC %2$.2f — на %3$d%% дороже домашней зарядки</string>
-    <string name="local_insight_dc_heavy">DC %1$.0f кВт·ч (%2$d сессий) vs AC %3$.0f — для ежедневных поездок домашняя AC мягче для батареи</string>
-    <string name="local_insight_ac_only">Все %2$d зарядки AC (%1$.0f кВт·ч) — оптимально для батареи и бюджета</string>
+    <string name="local_insight_night_idle_summary">%1$.1f кВт·ч ночью �?%2$d%% простоя с мотором</string>
+    <string name="local_insight_night_idle">Ночью (22:00�?6:00) с мотором ушло %1$.1f кВт·ч �?%2$d%% всего простоя. Выключайте зажигание, если климат не нужен</string>
+    <string name="local_insight_dc_more_expensive">DC %1$.2f %4$s/кВт·ч vs AC %2$.2f �?на %3$d%% дороже домашней зарядки</string>
+    <string name="local_insight_dc_heavy">DC %1$.0f кВт·ч (%2$d сессий) vs AC %3$.0f �?для ежедневных поездок домашняя AC мягче для батареи</string>
+    <string name="local_insight_ac_only">Все %2$d зарядки AC (%1$.0f кВт·ч) �?оптимально для батареи и бюджета</string>
     <string name="local_insight_ac_only_month">Все %2$d зарядки AC за месяц (%1$.0f кВт·ч), оптимально для батареи и бюджета</string>
     <string name="local_insight_charge_cost_week">Зарядки за неделю: %1$.0f %2$s за %3$.0f кВт·ч</string>
     <string name="local_insight_charge_cost_month">Зарядки за месяц: %1$.0f %2$s за %3$.0f кВт·ч</string>
-    <string name="local_insight_consumption_improved">Расход снизился на %1$.0f%% — хорошая динамика</string>
-    <string name="local_insight_highway_speed">Средняя скорость %1$.0f км/ч — на трассе расход %2$.1f кВт·ч/100, это ожидаемо</string>
-    <string name="local_insight_high_consumption">Средний расход %1$.1f кВт·ч/100 высокий — проверьте климат и стиль вождения</string>
+    <string name="local_insight_consumption_improved">Расход снизился на %1$.0f%% �?хорошая динамика</string>
+    <string name="local_insight_highway_speed">Средняя скорость %1$.0f км/ч �?на трассе расход %2$.1f кВт·ч/100, это ожидаемо</string>
+    <string name="local_insight_high_consumption">Средний расход %1$.1f кВт·ч/100 высокий �?проверьте климат и стиль вождения</string>
     <string name="local_insight_low_consumption">Отличный расход %1$.1f кВт·ч/100 за %2$.0f км за неделю</string>
     <string name="local_insight_low_consumption_month">Отличный расход %1$.1f кВт·ч/100 за %2$.0f км за месяц</string>
-    <string name="local_insight_idle_rate_high">Высокий расход на стоянке ~%1$.1f кВт·ч/ч — скорее всего климат или обогрев</string>
-    <string name="local_insight_km_up">Пробег вырос: %1$.0f → %2$.0f км — это может объяснять изменение среднего расхода</string>
+    <string name="local_insight_idle_rate_high">Высокий расход на стоянке ~%1$.1f кВт·ч/ч �?скорее всего климат или обогрев</string>
+    <string name="local_insight_km_up">Пробег вырос: %1$.0f �?%2$.0f км �?это может объяснять изменение среднего расхода</string>
     <string name="local_insight_trips_more">Поездок стало больше: %1$d vs %2$d на прошлой неделе</string>
     <string name="local_insight_trips_more_month">Поездок стало больше: %1$d vs %2$d за прошлый месяц</string>
-    <string name="local_insight_weekly_mileage">За неделю %1$.0f км в %2$d поездках — достаточно данных для точной оценки</string>
+    <string name="local_insight_weekly_mileage">За неделю %1$.0f км в %2$d поездках �?достаточно данных для точной оценки</string>
     <string name="local_insight_monthly_mileage">За месяц %1$.0f км в %2$d поездках, достаточно данных для точной оценки</string>
-    <string name="local_insight_12v_ok">12V %1$.1f В — бортовая сеть в норме</string>
-    <string name="local_insight_cell_ok">Разброс банок %1$.0f мВ — баланс в норме</string>
-    <string name="local_insight_heat_ac">При +%1$d°C расход %2$.1f кВт·ч/100 — кондиционер добавляет нагрузку</string>
-    <string name="local_insight_best_trip">Лучшая поездка %1$.1f кВт·ч/100 на %2$.0f км — удачный режим вождения</string>
-    <string name="local_insight_mixed_charging">Зарядка за неделю: AC %1$.0f кВт·ч, DC %2$.0f кВт·ч — для батареи чаще заряжайтесь дома</string>
+    <string name="local_insight_12v_ok">12V %1$.1f В �?бортовая сеть в норме</string>
+    <string name="local_insight_cell_ok">Разброс банок %1$.0f мВ �?баланс в норме</string>
+    <string name="local_insight_heat_ac">При +%1$d°C расход %2$.1f кВт·ч/100 �?кондиционер добавляет нагрузку</string>
+    <string name="local_insight_best_trip">Лучшая поездка %1$.1f кВт·ч/100 на %2$.0f км �?удачный режим вождения</string>
+    <string name="local_insight_mixed_charging">Зарядка за неделю: AC %1$.0f кВт·ч, DC %2$.0f кВт·ч �?для батареи чаще заряжайтесь дома</string>
     <string name="local_insight_mixed_charging_month">Зарядка за месяц: AC %1$.0f кВт·ч, DC %2$.0f кВт·ч, для батареи чаще заряжайтесь дома</string>
-    <string name="local_insight_low_night_idle">Ночной простой всего %1$d%% — хорошая привычка глушить мотор</string>
-    <string name="local_insight_low_idle_share">Простой с мотором — всего %1$d%% недельного расхода, это хорошо</string>
+    <string name="local_insight_low_night_idle">Ночной простой всего %1$d%% �?хорошая привычка глушить мотор</string>
+    <string name="local_insight_low_idle_share">Простой с мотором �?всего %1$d%% недельного расхода, это хорошо</string>
     <string name="local_insight_low_idle_share_month">Простой с мотором, всего %1$d%% месячного расхода, это хорошо</string>
     <string name="local_insight_cost_per_100">Стоимость пробега ~%1$.2f %3$s/100 км (%2$.0f %3$s за неделю)</string>
     <string name="local_insight_cost_per_100_month">Стоимость пробега ~%1$.2f %3$s/100 км (%2$.0f %3$s за месяц)</string>
@@ -1133,7 +1133,7 @@
     <string name="settings_voice_button_mic_header">Кнопка и микрофон</string>
     <string name="settings_voice_enable_label">Голосовые команды</string>
     <string name="settings_voice_enable_description">Команды кнопкой руля без интернета</string>
-    <string name="settings_voice_model_downloading">Загрузка… %1$d%%</string>
+    <string name="settings_voice_model_downloading">Загрузка�?%1$d%%</string>
     <string name="voice_listening">Слушаю</string>
     <string name="voice_thinking">Думаю</string>
     <string name="voice_error_model_missing">Голосовая модель не загружена. Скачайте её в Настройках, раздел Голос-агент.</string>
@@ -1220,7 +1220,7 @@
     <string name="settings_agent_gender_female">Женский</string>
     <string name="settings_agent_gender_hint">Действует на все голоса: у каждого источника есть мужской и женский вариант</string>
     <string name="settings_agent_memory_title">Память о водителе</string>
-    <string name="settings_agent_memory_hint">Агент запоминает имя и устойчивые предпочтения, когда вы ему об этом говорите. Скажите «забудь …», чтобы убрать один факт</string>
+    <string name="settings_agent_memory_hint">Агент запоминает имя и устойчивые предпочтения, когда вы ему об этом говорите. Скажите «забудь …�? чтобы убрать один факт</string>
     <string name="settings_agent_memory_empty">Пока ничего не запомнено</string>
     <string name="settings_agent_memory_forget_all">Забыть всё</string>
 
@@ -1248,7 +1248,7 @@
     <string name="settings_conn_base_url_label">Base URL</string>
     <string name="settings_conn_model_label">Модель (id)</string>
     <string name="settings_conn_check">Проверить</string>
-    <string name="settings_conn_checking">Проверяю…</string>
+    <string name="settings_conn_checking">Проверяю�?/string>
     <string name="settings_zai_hint">Бесплатная glm-4.7-flash, рекомендуется как основная</string>
     <string name="settings_custom_hint">Любой OpenAI-совместимый API. Пресет подставляет адрес и модель, ключ свой.</string>
     <string name="settings_custom_extra_json_label">Доп. параметры запроса (JSON)</string>
@@ -1318,7 +1318,7 @@
     <string name="settings_hud_speed_sign_title">Знак скорости под стрелкой</string>
     <string name="settings_hud_speed_sign_desc">Красный знак ограничения скорости в нижнем слоте HUD</string>
     <string name="settings_hud_status_unsupported">Шина SOME/IP не найдена: на этой машине вывод на HUD недоступен</string>
-    <string name="settings_hud_status_connecting">Подключение к шине…</string>
+    <string name="settings_hud_status_connecting">Подключение к шине�?/string>
     <string name="settings_hud_status_on">Передача на HUD активна</string>
     <string name="settings_hud_status_bind_failed">Не удалось подключиться к шине SOME/IP</string>
     <string name="settings_hud_hint">Нужна комплектация с проекционным дисплеем. Данные берутся из окна Яндекс Навигатора</string>
@@ -1344,8 +1344,8 @@
     <!-- Split-screen pill menu -->
     <string name="split_menu_mirror">Поменять стороны</string>
     <string name="split_menu_swap">Поменять приложения</string>
-    <string name="split_menu_pick_left">Приложение слева…</string>
-    <string name="split_menu_pick_right">Приложение справа…</string>
+    <string name="split_menu_pick_left">Приложение слева�?/string>
+    <string name="split_menu_pick_right">Приложение справа�?/string>
     <string name="split_menu_exit">Выход</string>
     <string name="split_picker_title_change">Выберите приложение</string>
     <string name="split_picker_title_left">Выберите приложение для левой панели</string>

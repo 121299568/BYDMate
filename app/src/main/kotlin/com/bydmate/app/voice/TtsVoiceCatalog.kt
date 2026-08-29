@@ -32,7 +32,7 @@ data class TtsVoice(
  *  archive, and 2 speakers (mark, sofia) of the Supertonic archive. */
 object TtsVoiceCatalog {
     private const val VITS_MULTI_URL =
-        "https://github.com/AndyShaman/BYDMate/releases/download/tts-voices-v1/vits-ru-multi.tar.bz2"
+        "https://github.com/121299568/BYDMate/releases/download/tts-voices-v1/vits-ru-multi.tar.bz2"
     private const val SUPERTONIC_URL =
         "https://github.com/k2-fsa/sherpa-onnx/releases/download/tts-models/sherpa-onnx-supertonic-3-tts-int8-2026-05-11.tar.bz2"
 
