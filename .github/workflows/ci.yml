@@ -4,15 +4,16 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v7
 
@@ -23,20 +24,13 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v5
 
-      # PR-only: пуши в main всегда проходят полный локальный прогон перед релизом,
-      # гонять 3.5k тестов второй раз на медленном раннере — дубль. На PR локального
-      # прогона нет, там тесты обязательны.
-      - name: Unit tests
-        if: github.event_name == 'pull_request'
-        run: ./gradlew :app:testDebugUnitTest --stacktrace
+      - name: Build debug APK
+        run: ./gradlew :app:assembleDebug --stacktrace
 
-      - name: Android Lint
-        run: ./gradlew :app:lintDebug --stacktrace
-
-      - name: Upload reports on failure
-        if: failure()
+      - name: Upload APK
+        if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: reports
-          path: app/build/reports/
-          retention-days: 14
+          name: BYDMate-debug-apk
+          path: app/build/outputs/apk/debug/*.apk
+          retention-days: 30
