@@ -24,13 +24,13 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v5
 
-      - name: Build debug APK
-        run: ./gradlew :app:assembleDebug --stacktrace
+      - name: Build release APK
+        run: ./gradlew :app:assembleRelease --stacktrace -PallowUnsignedRelease
 
       - name: Upload APK
         if: always()
         uses: actions/upload-artifact@v7
         with:
-          name: BYDMate-debug-apk
-          path: app/build/outputs/apk/debug/*.apk
+          name: BYDMate-release-apk
+          path: app/build/outputs/apk/release/*.apk
           retention-days: 30
