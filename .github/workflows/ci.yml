@@ -24,20 +24,25 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v5
 
-      - name: Create debug keystore for signing
+      - name: Generate release keystore
         run: |
           mkdir -p ~/.android
-          if [ ! -f ~/.android/debug.keystore ]; then
-            keytool -genkeypair -v \
-              -dname "CN=BYDMate, OU=Dev, O=BYDMate, L=City, S=State, C=US" \
-              -storepass android \
-              -keypass android \
-              -alias debug \
-              -keystore ~/.android/debug.keystore \
-              -keyalg RSA \
-              -keysize 2048 \
-              -validity 10000
-          fi
+          keytool -genkeypair -v \
+            -dname "CN=BYDMate, OU=Dev, O=BYDMate, L=Shenzhen, S=Guangdong, C=CN" \
+            -storepass ${{ secrets.KEYSTORE_PASS }} \
+            -keypass ${{ secrets.KEY_PASS }} \
+            -alias ${{ secrets.KEY_ALIAS }} \
+            -keystore ~/.android/release.keystore \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000
+
+      - name: Create keystore.properties
+        run: |
+          echo "storeFile=${{ github.workspace }}/.android/release.keystore" > keystore.properties
+          echo "storePassword=${{ secrets.KEYSTORE_PASS }}" >> keystore.properties
+          echo "keyAlias=${{ secrets.KEY_ALIAS }}" >> keystore.properties
+          echo "keyPassword=${{ secrets.KEY_PASS }}" >> keystore.properties
 
       - name: Build release APK
         run: ./gradlew :app:assembleRelease --stacktrace

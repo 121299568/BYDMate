@@ -44,12 +44,22 @@ android {
                 keyAlias = keystoreProps.getProperty("keyAlias")
                 keyPassword = keystoreProps.getProperty("keyPassword")
             }
+        } else {
+            // CI fallback: sign with debug keystore for sideload
+            create("debugSigning") {
+                storeFile = file(System.getenv("HOME") + "/.android/debug.keystore")
+                storePassword = "android"
+                keyAlias = "debug"
+                keyPassword = "android"
+            }
         }
     }
 
     buildTypes {
         release {
-            signingConfig = signingConfigs.findByName("release")
+            signingConfig = signingConfigs.findByName(
+                if (keystorePropsFile.exists()) "release" else "debugSigning"
+            ) ?: signingConfigs["debugSigning"]
             isMinifyEnabled = true
             isShrinkResources = false
             proguardFiles(
