@@ -27,33 +27,39 @@ jobs:
       - name: Generate debug keystore
         run: |
           mkdir -p ~/.android
-          if [ ! -f ~/.android/debug.keystore ]; then
-            keytool -genkeypair -v \
-              -dname "CN=BYDMate, OU=Dev, O=BYDMate, L=Shenzhen, S=Guangdong, C=CN" \
-              -storepass android \
-              -keypass android \
-              -alias debug \
-              -keystore ~/.android/debug.keystore \
-              -keyalg RSA \
-              -keysize 2048 \
-              -validity 10000
-          fi
+          keytool -genkeypair -v \
+            -dname "CN=BYDMate, OU=Dev, O=BYDMate, L=Shenzhen, S=Guangdong, C=CN" \
+            -storepass android \
+            -keypass android \
+            -alias debug \
+            -keystore ~/.android/debug.keystore \
+            -keyalg RSA \
+            -keysize 2048 \
+            -validity 10000 || true
 
-      - name: Build and sign release APK
-        env:
-          KEYSTORE_FILE: ${{ github.workspace }}/.android/debug.keystore
-          KEYSTORE_PASSWORD: android
-          KEY_ALIAS: debug
-          KEY_PASSWORD: android
+      - name: Build release APK
         run: ./gradlew :app:assembleRelease --stacktrace
+
+      - name: Sign APK with jarsigner
+        run: |
+          apk_file=$(ls app/build/outputs/apk/release/*.apk | head -1)
+          echo "Signing: $apk_file"
+          jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA256 \
+            -keystore ~/.android/debug.keystore \
+            -storepass android \
+            -keypass android \
+            "$apk_file" \
+            debug
+          echo "Signing complete"
 
       - name: Verify APK signature
         run: |
           apk_file=$(ls app/build/outputs/apk/release/*.apk | head -1)
-          echo "APK file: $apk_file"
-          jarsigner -verify -verbose -certs "$apk_file" || echo "WARNING: APK may not be signed"
+          jarsigner -verify -verbose -certs "$apk_file"
+          echo "APK signed successfully!"
 
       - name: Upload APK
+        if: always()
         uses: actions/upload-artifact@v7
         with:
           name: BYDMate-release-apk
