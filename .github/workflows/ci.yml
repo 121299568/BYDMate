@@ -35,28 +35,17 @@ jobs:
             -keystore ~/.android/debug.keystore \
             -keyalg RSA \
             -keysize 2048 \
-            -validity 10000 || true
+            -validity 10000
+
+      - name: Create keystore.properties
+        run: |
+          echo "storeFile=${{ github.workspace }}/.android/debug.keystore" > keystore.properties
+          echo "storePassword=android" >> keystore.properties
+          echo "keyAlias=debug" >> keystore.properties
+          echo "keyPassword=android" >> keystore.properties
 
       - name: Build release APK
         run: ./gradlew :app:assembleRelease --stacktrace
-
-      - name: Sign APK with jarsigner
-        run: |
-          apk_file=$(ls app/build/outputs/apk/release/*.apk | head -1)
-          echo "Signing: $apk_file"
-          jarsigner -verbose -sigalg SHA256withRSA -digestalg SHA256 \
-            -keystore ~/.android/debug.keystore \
-            -storepass android \
-            -keypass android \
-            "$apk_file" \
-            debug
-          echo "Signing complete"
-
-      - name: Verify APK signature
-        run: |
-          apk_file=$(ls app/build/outputs/apk/release/*.apk | head -1)
-          jarsigner -verify -verbose -certs "$apk_file"
-          echo "APK signed successfully!"
 
       - name: Upload APK
         if: always()
